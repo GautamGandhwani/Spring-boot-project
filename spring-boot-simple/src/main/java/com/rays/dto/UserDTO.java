@@ -1,6 +1,5 @@
 package com.rays.dto;
 
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,9 +11,11 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GeneratorType;
 import org.hibernate.annotations.GenericGenerator;
 
+import com.rays.common.BaseDTO;
+
 @Entity
 @Table(name = "ST_USER")
-public class UserDTO {
+public class UserDTO extends BaseDTO {
 
 	@Id
 	@GeneratedValue(generator = "ncsPk")
@@ -42,6 +43,9 @@ public class UserDTO {
 
 	@Column(name = "ROLE_NAME", length = 50)
 	private String roleName;
+
+	@Column(name = "IMAGE_ID")
+	private Long imageId;
 
 	public Long getId() {
 		return id;
@@ -105,5 +109,13 @@ public class UserDTO {
 
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
+	}
+
+	public Long getImageId() {
+		return imageId;
+	}
+
+	public void setImageId(Long imageId) {
+		this.imageId = imageId;
 	}
 }
