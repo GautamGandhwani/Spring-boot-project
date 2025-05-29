@@ -17,12 +17,6 @@ import com.rays.common.BaseDTO;
 @Table(name = "ST_USER")
 public class UserDTO extends BaseDTO {
 
-	@Id
-	@GeneratedValue(generator = "ncsPk")
-	@GenericGenerator(name = "ncsPk", strategy = "native")
-	@Column(name = "id", unique = true, nullable = false)
-	protected Long id;
-
 	@Column(name = "FIRST_NAME", length = 50)
 	private String firstName;
 
@@ -117,5 +111,10 @@ public class UserDTO extends BaseDTO {
 
 	public void setImageId(Long imageId) {
 		this.imageId = imageId;
+	}
+
+	@Override
+	public String getValue() {
+		return null;
 	}
 }

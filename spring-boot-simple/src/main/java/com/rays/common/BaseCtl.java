@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
 public class BaseCtl {
+	
 	public ORSResponse validate(BindingResult bindingResult) {
 
 		ORSResponse res = new ORSResponse(true);

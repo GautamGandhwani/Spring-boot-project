@@ -7,7 +7,9 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.rays.common.BaseDTO;
 import com.rays.common.BaseForm;
+import com.rays.dto.UserDTO;
 
 public class UserForm extends BaseForm {
 
@@ -75,5 +77,17 @@ public class UserForm extends BaseForm {
 
 	public void setRoleId(Long roleId) {
 		this.roleId = roleId;
+	}
+
+	@Override
+	public BaseDTO getDto() {
+		UserDTO dto = (UserDTO) initDTO(new UserDTO());
+		dto.setFirstName(firstName);
+		dto.setLastName(lastName);
+		dto.setLoginId(loginId);
+		dto.setPassword(password);
+		dto.setDob(dob);
+		dto.setRoleId(roleId);
+		return dto;
 	}
 }
